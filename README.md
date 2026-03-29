@@ -35,6 +35,9 @@ A simple Node.js/Express backend starter for an admin system.
 ### Auth
 
 - `POST /api/auth/login` - authenticate and receive JWT token
+  - Body: `{ "username": "...", "password": "...", "rememberMe": true }`
+  - `rememberMe` (optional) extends token expiration (e.g. 7 days)
+- `POST /api/auth/refresh` - refresh JWT token (requires the current token in `Authorization` header)
 
 ### Users (requires JWT token)
 
